@@ -1,7 +1,7 @@
 // Squirm, a Ludum Dare 35 Entry
 // (c) 2016 by Arthur Langereis — @zenmumbler
 
-/// <reference path="../../stardazed-tx/dist/stardazed-tx.d.ts" />
+/// <reference path="../../stardazed/dist/stardazed.d.ts" />
 /// <reference path="flycam.ts" />
 /// <reference path="asset.ts" />
 /// <reference path="player.ts" />
