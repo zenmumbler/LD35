@@ -1,0 +1,61 @@
+TODO
+----
+
+[ ] (S) Debris (only normal)
+[ ] (M) Rune model find text
+[ ] (S) On-screen text (“I can’t crawl under there”)
+[X] (H) End sequence (state)
+
+[ ] (S) Rune usage counter
+[ ] (M) AABB proximity light enabler
+[ ] (S) Glow rock lights
+[ ] (M) Place Various debris, decorations
+[ ] (H) On-screen health redness (aura)
+
+[X] (M) Movement collision
+[X] (S) Raised walls (only flattened)
+[X] (S) Window walls (tease)
+[X] (S) Footsteps / glibs
+[X] (M) Ambient Sounds
+[X] (H) New level; less rotate-y, guiding
+[X] (M) Multi keyboard support
+[X] (H) Shrink camera animation
+[X] (H) Expand camera animation (maybe just reversed shrink)
+[X] (L) Title screen
+[X] (M) Loader status
+[X] (M) Emissive Colour for glow rock
+
+
+Live
+----
+
+[X] (S) Reduce file sizes (jpg etc)
+[ ] (S) Fix the overlap on corner geometry
+[ ] (S) Disable flycam
+
+
+Assets
+------
+
+[X] Rune
+[X] Glowing Rock
+[X] Debris x 5
+[X] Gold loot
+[X] Skeletal remains
+[X] Door texture metal
+
+[X] Foot step sound
+[X] Self-drag sound
+[X] Bone crack sound
+[X] Organic sound
+[X] Splatter sound
+[X] Agony sounds
+[X] Exasperation sound
+[X] Insane laugh
+[X] Rune use sound
+[X] Item find sound
+[X] BGM
+[X] Atmospheric sounds
+
+[ ] Rune icon
+[X] Logotype

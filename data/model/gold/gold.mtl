@@ -1,0 +1,5 @@
+newmtl gold
+	Ks 1 1 1
+	Ns 2
+	map_Kd g_diffuse.jpg
+	norm g_normal.jpg

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Squirm - a Ludum Dare 35 Entry by @zenmumbler</title>
+	<style>
+		body {
+			margin: 0; background: black;
+			cursor: default;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+
+			font-family: Tahoma, sans-serif;
+		}
+		.stageholder {
+			width: 1280px;
+			height: 720px;
+			margin: 50px auto 0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.stageholder.tiny {
+			width: 960px;
+			height: 540px;
+		}
+		.stageholder.fullhd {
+			width: 1920px;
+			height: 1080px;
+		}
+
+		#stage {
+			display: none;
+			position: absolute;
+			z-index: 3;
+		}
+
+		.overlay {
+			position: absolute;
+			z-index: 4;
+			width: 100%;
+			height: 100%;
+			display: none;
+			color: white;
+			font-size: 22px;
+		}
+		.titles {
+			padding: 30px 50px;
+		}
+		.right {
+			position: absolute;
+			right: 150px;
+			top: 50px;
+		}
+		.start {
+			margin-top: 50px;
+		}
+
+		.messages p {
+			position: absolute;
+			text-align: center;
+			left: 0;
+			right: 0;
+			bottom: 35%;
+		}
+
+
+		.bar {
+			position: absolute;
+			width: 500px;
+			height: 12px;
+			left: 390px;
+			top: 350px;
+			border: 1px solid white;
+			padding: 1px;
+		}
+		.progress {
+			background-color: rgb(180, 45, 32);
+			height: 100%;
+			width: 0;
+		}
+
+		.butan {
+			display: inline-block;
+			width: 100px;
+			padding: 10px;
+			border: 1px solid white;
+			text-align: center;
+			cursor: pointer;
+		}
+		.butan.pres {
+			color: black;
+			background: white;
+		}
+		.butan.begin {
+			width: 300px;
+			font-size: 36px;
+		}
+
+		.info {
+			font-size: 16px;
+		}
+
+		a, a:visited, a:active {
+			color: rgb(231, 211, 7);
+		}
+	</style>
+</head>
+<body>
+
+<div class="stageholder hdready">
+	<canvas width="1280" height="720" id="stage"></canvas>
+
+	<div class="overlay messages">
+		<p></p>
+	</div>
+
+	<div class="overlay loading">
+		<div class="bar"><div class="progress"></div></div>
+	</div>
+
+	<div class="overlay titles">
+		<img class="logo" src="data/logotype.png">
+
+		<div class="controls keyboard">
+			<h2>Keyboard Type</h2>
+			<p class="multi"><span class="butan pres" data-key="keyboard" data-value="qwerty">QWERTY</span><span class="butan" data-key="keyboard" data-value="qwertz">QWERTZ</span><span class="butan" data-key="keyboard" data-value="azerty">AZERTY</span></p>
+		</div>
+
+		<div class="controls voice">
+			<h2>Voice</h2>
+			<p class="multi"><span class="butan pres" data-key="voice" data-value="female">Female</span><span class="butan" data-key="voice" data-value="male">Male</span></p>
+		</div>
+
+		<div class="controls viewport">
+			<h2>Viewport</h2>
+			<p class="multi"><span class="butan" data-key="viewport" data-value="tiny">540p</span><span class="butan pres" data-key="viewport" data-value="hdready">720p</span><span class="butan" data-key="viewport" data-value="fullhd">1080p</span></p>
+		</div>
+
+		<div class="right">
+			<p class="info">An entry for <a href="http://ludumdare.com/compo/ludum-dare-35/?action=preview&uid=17143">Ludum Dare 35</a>: Shapeshift</p>
+			<p class="info">Created with the <a href="https://github.com/stardazed" target="_blank">Stardazed</a> game framework<br>
+			&copy; 2016 by Arthur Langereis (<a href="https://twitter.com/zenmumbler" target="_blank">@zenmumbler</a>)</p>
+
+			<p class="info"><br><br><span id="wasd">WASD</span> for movement, E to use item.<br>
+			WARNING: audio may be upsetting to some.</p>
+
+			<div class="start">
+				<span class="butan pres begin">Start</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="../stardazed-tx/ext/veclib.js"></script>
+<script src="../stardazed-tx/ext/inflate.js"></script>
+<script src="../stardazed-tx/dist/stardazed-tx.js"></script>
+<script src="build/LD35.js"></script>
+
+</body>
+</html>

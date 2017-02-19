@@ -1,0 +1,36 @@
+{
+	"tex2D": [
+		{
+			"id": "ceilDiffuse",
+			"relPath": "tex2D/ceil-a.jpg",
+			"format": "rgb8",
+			"genMips": true
+		},
+		{
+			"id": "wallDiffuse0",
+			"relPath": "tex2D/wall-a.jpg",
+			"format": "rgb8",
+			"genMips": true
+		},
+		{
+			"id": "wallDiffuse1",
+			"relPath": "tex2D/wall-b.jpg",
+			"format": "rgb8",
+			"genMips": true
+		},
+		{
+			"id": "wallDiffuse2",
+			"relPath": "tex2D/wall-c.jpg",
+			"format": "rgb8",
+			"genMips": true
+		}
+	],
+	"audio": [
+	],
+
+	"hierarchy": {
+		"tex": {
+			
+		}
+	}
+}

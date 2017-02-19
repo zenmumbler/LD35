@@ -1,0 +1,4 @@
+build/*.map
+build/*.js
+sources/*
+.DS_Store

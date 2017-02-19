@@ -1,0 +1,170 @@
+{
+	"schemaVersion": "0.0.0",
+	"type": "manifest",
+	"sharedRelPath": "data",
+	"contents": [
+		{
+			"type": "group",
+			"name": "sound",
+			"sharedRelPath": "sound",
+			"contents": [
+				{
+					"type": "array",
+					"name": "ambienceArray",
+					"sharedRelPath": "ambience",
+					"contents": [
+						{ "type": "audio", "relPath": "17219__meatball4u__darkthumpwave.mp3" },
+						{ "type": "audio", "relPath": "170722__andromadax24__woosh.mp3" },
+						{ "type": "audio", "relPath": "248150__hykenfreak__deepest-boom-yet.mp3" },
+						{ "type": "audio", "relPath": "329674__unaxete__cathedral-reverb-jumpscare.mp3" }
+					]
+				},
+				{
+					"type": "audio",
+					"name": "findRune",
+					"relPath": "effect/FX142-rune-find.mp3"
+				},
+				{
+					"type": "audio",
+					"name": "moveStep",
+					"relPath": "move/197778__samulis__footstep-on-stone.mp3"
+				},
+				{
+					"type": "audio",
+					"name": "moveDrag",
+					"relPath": "move/174634__altfuture__guts-dragging.mp3"
+				},
+				{
+					"type": "audio",
+					"name": "mainMusic",
+					"relPath": "music/137109__klankbeeld__horror-ambience-16.mp3"
+				},
+				{
+					"type": "audio",
+					"name": "endMusic",
+					"relPath": "music/262257__gowlermusic__horror-sounds-1.mp3"
+				},
+				{
+					"type": "array",
+					"name": "goreArray",
+					"sharedRelPath": "shift",
+					"contents": [
+						{ "type": "audio", "relPath": "180491__vincentoliver__boneclicks-goresquelches-16.mp3" },
+						{ "type": "audio", "relPath": "185147__afilion__bone-crack.mp3" },
+						{ "type": "audio", "relPath": "204041__duckduckpony__impacts-slushy-orange-002.mp3" },
+						{ "type": "audio", "relPath": "bite-small.mp3" }
+					]
+				},
+				{
+					"type": "group",
+					"name": "voice",
+					"sharedRelPath": "voice",
+					"contents": [
+						{
+							"type": "group",
+							"name": "male",
+							"sharedRelPath": "male",
+							"contents": [
+								{
+									"type": "audio",
+									"name": "scream1",
+									"relPath": "272023__aldenroth2__male-scream.mp3"
+								},
+								{
+									"type": "audio",
+									"name": "scream2",
+									"relPath": "90790__kmoon__scream-male-middistance-outdoors.mp3"
+								},
+								{
+									"type": "audio",
+									"name": "pant",
+									"relPath": "317477__drkvixn91__breathless-panting-2.mp3"
+								},
+								{
+									"type": "audio",
+									"name": "insane",
+									"relPath": "338902__gentlemanwalrus__mad-laughter.mp3"
+								},
+							]
+						},
+						{
+							"type": "group",
+							"name": "female",
+							"sharedRelPath": "female",
+							"contents": [
+								{
+									"type": "audio",
+									"name": "scream1",
+									"relPath": "241573__reitanna__short-scream.mp3"
+								},
+								{
+									"type": "audio",
+									"name": "scream2",
+									"relPath": "261419__archeos__womanscream.mp3"
+								},
+								{
+									"type": "audio",
+									"name": "pant",
+									"relPath": "218183__madamvicious__woman-panting-painfully.mp3"
+								},
+								{
+									"type": "audio",
+									"name": "insane",
+									"relPath": "132252__robinhood76__02940-insane-women-laughter.mp3"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "group",
+			"name": "tex",
+			"contents": [
+				{
+					"type": "tex2D",
+					"name": "ceilDiffuse",
+					"relPath": "tex2D/ceil-a.jpg",
+					"format": "rgb8",
+					"genMips": true
+				},
+				{
+					"type": "array",
+					"name": "wallDiffuseArray",
+					"sharedRelPath": "tex2D",
+					"contents": [
+						{
+							"type": "tex2D",
+							"relPath": "wall-a.jpg",
+							"format": "rgb8",
+							"genMips": true
+						},
+						{
+							"type": "tex2D",
+							"relPath": "wall-b.jpg",
+							"format": "rgb8",
+							"genMips": true
+						},
+						{
+							"type": "tex2D",
+							"relPath": "wall-c.jpg",
+							"format": "rgb8",
+							"genMips": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "mesh",
+			"name": "rune",
+			"relPath": "model/rune/mese.obj"
+		},
+		{
+			"type": "material",
+			"name": "floorMat",
+			"diffuse": {  }
+		}
+	]
+}

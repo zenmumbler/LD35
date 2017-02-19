@@ -1,0 +1,10 @@
+# Blender MTL File: 'mese.blend'
+# Material Count: 2
+
+newmtl Material
+Ke 0.634117 0.579216 0.019216
+map_Kd mese.png
+
+newmtl Material.001
+d 0.300000
+map_Kd mese_transp.png
