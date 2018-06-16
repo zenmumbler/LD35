@@ -5,7 +5,7 @@ class FlyCam {
 	private pos_ = [0, 0, 0];
 	private angleX_ = 0;
 	private angleY_ = Math.PI;
-	private rot_: sd.Float4;
+	private rot_: sd.Float4 = [0, 0, 0, 1];
 	private dir_ = [0, 0, -1];
 	private up_ = [0, 1, 0];
 	private speed_ = 0;
@@ -21,7 +21,7 @@ class FlyCam {
 		this.sideSpeed_ += timeStep * sideAccel;
 
 		vec3.scaleAndAdd(this.pos_, this.pos_, this.dir_, this.speed_);
-		var right = vec3.cross([], this.dir_, this.up_);
+		const right = vec3.cross([], this.dir_, this.up_);
 		vec3.scaleAndAdd(this.pos_, this.pos_, right, this.sideSpeed_);
 
 		this.speed_ *= 0.9;
@@ -45,7 +45,6 @@ class FlyCam {
 	}
 
 	get pos() { return this.pos_; }
-	set pos(newPos: sd.Float3) { this.pos_ = [newPos[0], newPos[1], newPos[2]]; }
 	get dir() { return this.dir_; }
 	get rotation() { return this.rot_; }
 	get focusPos() { return vec3.add([], this.pos_, this.dir_); }
@@ -53,13 +52,14 @@ class FlyCam {
 }
 
 
-
 class FlyCamController {
 	cam: FlyCam;
 	private vpWidth_: number;
 	private vpHeight_: number;
 	private tracking_ = false;
+
 	private lastPos_ = [0, 0];
+	private deviceTouch_ = false;
 
 	constructor(sensingElem: HTMLElement, initialPos: sd.Float3) {
 		this.cam = new FlyCam(initialPos);
@@ -77,8 +77,8 @@ class FlyCamController {
 			if (!this.tracking_) {
 				return;
 			}
-			var newPos = [evt.clientX, evt.clientY];
-			var delta = vec2.sub([], newPos, this.lastPos_);
+			const newPos = [evt.clientX, evt.clientY];
+			const delta = vec2.sub([], newPos, this.lastPos_);
 			vec2.divide(delta, delta, [-this.vpWidth_, -this.vpHeight_]);
 			this.lastPos_ = newPos;
 
@@ -88,26 +88,42 @@ class FlyCamController {
 		dom.on(window, "mouseup", (_evt: MouseEvent) => {
 			this.tracking_ = false;
 		});
+
+		dom.on(window, "deviceorientation", (_evt: DeviceOrientationEvent) => {
+			// this.deviceTilt_ = evt.beta! * Math.sign(evt.gamma || 0);
+		});
+		dom.on(window, "touchstart", (_evt: TouchEvent) => {
+			this.deviceTouch_ = true;
+		});
+		dom.on(window, "touchend", (_evt: TouchEvent) => {
+			this.deviceTouch_ = false;
+		});
+		dom.on(window, "touchcancel", (_evt: TouchEvent) => {
+			this.deviceTouch_ = false;
+		});
 	}
 
 	step(timeStep: number) {
 		const maxAccel = 0.8;
-		var accel = 0, sideAccel = 0;
+		let accel = 0, sideAccel = 0;
 
-		if (io.keyboard.down(io.Key.UP) || io.keyboard.down(io.Key.W)) {
+		if (control.keyboard.down(control.Key.UP) || control.keyboard.down(control.Key.W)) {
 			accel = maxAccel;
 		}
-		else if (io.keyboard.down(io.Key.DOWN) || io.keyboard.down(io.Key.S)) {
+		else if (control.keyboard.down(control.Key.DOWN) || control.keyboard.down(control.Key.S)) {
 			accel = -maxAccel;
 		}
-		if (io.keyboard.down(io.Key.LEFT) || io.keyboard.down(io.Key.A)) {
+		if (control.keyboard.down(control.Key.LEFT) || control.keyboard.down(control.Key.A)) {
 			sideAccel = -maxAccel;
 		}
-		else if (io.keyboard.down(io.Key.RIGHT) || io.keyboard.down(io.Key.D)) {
+		else if (control.keyboard.down(control.Key.RIGHT) || control.keyboard.down(control.Key.D)) {
 			sideAccel = maxAccel;
+		}
+		if (this.deviceTouch_) {
+			accel = maxAccel;
 		}
 
 		// this.cam.rotate([math.clamp(this.deviceTilt_ / 4000, -1, 1), 0]);
-		this.cam.update(timeStep, accel, sideAccel);		
+		this.cam.update(timeStep, accel, sideAccel);
 	}
 }
